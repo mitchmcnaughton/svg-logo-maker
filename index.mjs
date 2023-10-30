@@ -37,11 +37,11 @@ async function collectUserInputWriteFile(){
         var svgShape;
         //if statement to change the svg shape based on users selection
         if (answers.shape === 'circle'){
-            svgShape = `<circle x="0" y="0" cx="25" cy="75" r="20" fill = "${answers.shapeColour}"/></circle>`;
+            svgShape = `<circle cx="0" cy="10" r="20" fill = "${answers.shapeColour}"/>`;
         } else if (answers.shape === 'triangle') {
-            svgShape = `<polygon x="0" y="0" points="250,60 100,400 400,400" fill = "${answers.shapeColour}/></polygon>`
+            svgShape = `<polygon x="0" y="0" points="250,60 100,400 400,400" fill="${answers.shapeColour}/>`
         } else {
-            svgShape = `<rect x="0" y="0" width="30" height="30" fill = "${answers.shapeColour}/></rect>`;
+            svgShape = `<rect x="0" y="0" width="30" height="30" fill="${answers.shapeColour}/>`;
         }
         
         //text for the svg!
@@ -49,7 +49,7 @@ async function collectUserInputWriteFile(){
         `<svg xmlns="http://www.w3.org/2000/svg">
         <g>
         ${svgShape}
-        <text x="0" y="50" font-size="35" fill ="${answers.textColour}">${answers.logo}</text>
+        <text x="0" y="50" font-size="35" fill="${answers.textColour}">${answers.logo}</text>
         </g>
         </svg>
         `;
