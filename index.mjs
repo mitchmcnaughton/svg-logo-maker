@@ -38,24 +38,24 @@ async function collectUserInputWriteFile(){
         var svgContent;
         //if statement to change the svg shape based on users selection
         if (answers.shape === 'circle'){
-            svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
             <g>
-              <circle cx="50%" cy="50%" r="45%" fill="${answers.shapeColour}" />
-              <text x="50%" y="50%" font-size="20" fill="${answers.textColourColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
+              <circle cx="150" cy="100" r="90" fill="${answers.shapeColour}" />
+              <text x="150" y="100" font-size="20" fill="${answers.textColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
             </g>
           </svg>`;
         } else if (answers.shape === 'triangle') {
-            svgContent= `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+            svgContent= `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
             <g>
-              <polygon points="250,60 100,400 400,400" fill="${answers.shapeColour}" />
-              <text x="250" y="280" font-size="20" fill="${answers.textColourColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
+              <polygon points="150,30 75,200 225,200" fill="${answers.shapeColour}" />
+              <text x="150" y="160" font-size="20" fill="${answers.textColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
             </g>
-          </svg>`
+          </svg>`;
         } else {
-            svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+            svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
             <g>
-              <rect x="0" y="0" width="100" height="100" fill="${answers.shapeColour}"/>
-              <text x="50" y="50" font-size="20" fill=${answers.textColourColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
+              <rect x="50" y="0" width="200" height="200" fill="${answers.shapeColour}" />
+              <text x="150" y="100" font-size="20" fill="${answers.textColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
             </g>
           </svg>`;
         }
