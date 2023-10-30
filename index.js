@@ -34,6 +34,36 @@ async function collectUserInputWriteFile(){
         ];
 
         const answers = await inquirer.prompt(questions);
+        var svgShape;
+        //if statement to change the svg shape based on users selection
+        if (answers.shape === 'circle'){
+            svgShape = `<circle x="0" y="0" cx="25" cy="75" r="20" fill = "${answers.shapeColour}"/></circle>`;
+        } else if (answers.shape === 'triangle') {
+            svgShape = `<polygon x="0" y="0" points="250,60 100,400 400,400" fill = "${answers.shapeColour}/></polygon>`
+        } else {
+            svgShape = `<rect x="0" y="0" width="30" height="30" fill = "${answers.shapeColour}/></rect>`;
+        }
+        
+        //text for the svg!
+        const svgContent =
+        `<svg xmlns="http://www.w3.org/2000/svg">
+        <g>
+        ${svgShape}
+        <text x="0" y="50" font-size="35" fill ="${answers.textColour}">${answers.logo}</text>
+        </g>
+        </svg>
+        `;
 
+        //for generating multiple svgs with unique names so nothing gets overwritten
+        const timestamp = Date.now();
+
+        //write the svg text from above into a new file in examples folder
+        fs.writeFileSync(`examples/${timestamp}.svg`, svgContent, 'utf8');
+        console.log('SVG has been generated');
+    } catch (error) {
+        console.log('An error has occured oop:', error);
     }
-}
+    }
+
+    collectUserInputWriteFile();
+
