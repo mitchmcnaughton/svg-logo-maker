@@ -1,7 +1,7 @@
 // getting fs,inquirer and linking the shapes file in lib
-const fs = require('fs');
-const inquirer = require('inquirer');
-const shapes = require('./lib/shapes');
+import fs from 'fs';
+import inquirer from 'inquirer';
+import shapes from './lib/shapes.js';
 
 //function to collect user input and write the svg file
 async function collectUserInputWriteFile(){
