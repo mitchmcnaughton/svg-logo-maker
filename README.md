@@ -1,5 +1,5 @@
 # svg-logo-maker
- video link https://drive.google.com/file/d/1tf8Bd47Az5Iva37pmQPXHDQSPrmvT-RB/view
+ application demonstration video: https://drive.google.com/file/d/1tf8Bd47Az5Iva37pmQPXHDQSPrmvT-RB/view
 ## Description
      an application  that creates an svg logo based on three letters a certain shape and colours  
         
