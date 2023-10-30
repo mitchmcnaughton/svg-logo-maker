@@ -29,30 +29,36 @@ async function collectUserInputWriteFile(){
             {
                 type: 'input',
                 name: 'shapeColour',
-                message: 'Please enter a shape colour or hexn number:',
+                message: 'Please enter a shape colour or hex number:',
             }
         ];
 
         const answers = await inquirer.prompt(questions);
         var svgShape;
+        var svgContent;
         //if statement to change the svg shape based on users selection
         if (answers.shape === 'circle'){
-            svgShape = `<circle cx="0" cy="10" r="20" fill = "${answers.shapeColour}"/>`;
+            svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            <g>
+              <circle cx="50%" cy="50%" r="45%" fill="${answers.shapeColour}" />
+              <text x="50%" y="50%" font-size="20" fill="${answers.textColourColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
+            </g>
+          </svg>`;
         } else if (answers.shape === 'triangle') {
-            svgShape = `<polygon x="0" y="0" points="250,60 100,400 400,400" fill="${answers.shapeColour}/>`
+            svgContent= `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+            <g>
+              <polygon points="250,60 100,400 400,400" fill="${answers.shapeColour}" />
+              <text x="250" y="280" font-size="20" fill="${answers.textColourColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
+            </g>
+          </svg>`
         } else {
-            svgShape = `<rect x="0" y="0" width="30" height="30" fill="${answers.shapeColour}/>`;
+            svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+            <g>
+              <rect x="0" y="0" width="100" height="100" fill="${answers.shapeColour}"/>
+              <text x="50" y="50" font-size="20" fill=${answers.textColourColour}" text-anchor="middle" alignment-baseline="middle">${answers.logo}</text>
+            </g>
+          </svg>`;
         }
-        
-        //text for the svg!
-        const svgContent =
-        `<svg xmlns="http://www.w3.org/2000/svg">
-        <g>
-        ${svgShape}
-        <text x="0" y="50" font-size="35" fill="${answers.textColour}">${answers.logo}</text>
-        </g>
-        </svg>
-        `;
 
         //for generating multiple svgs with unique names so nothing gets overwritten
         const timestamp = Date.now();
