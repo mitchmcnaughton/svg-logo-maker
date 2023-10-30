@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+            <g>
+              <rect x="50" y="0" width="200" height="200" fill="blue" />
+              <text x="150" y="100" font-size="20" fill="green" text-anchor="middle" alignment-baseline="middle">tew</text>
+            </g>
+          </svg>

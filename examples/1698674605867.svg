@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+            <g>
+              <polygon points="150,30 75,200 225,200" fill="blue" />
+              <text x="150" y="160" font-size="20" fill="green" text-anchor="middle" alignment-baseline="middle">inS</text>
+            </g>
+          </svg>
